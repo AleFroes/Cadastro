@@ -1,0 +1,74 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_pYSqV7Shcre",
+        "outputId": "7e86702e-d0bf-432e-c419-4b7dfd850f89"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Sistema de Cadastro\n",
+            "Nome: Alexandre\n",
+            "Sobrenome: Froes\n",
+            "CPF: 33399400888\n",
+            "Endereço: Rua Santa Clara. 97\n",
+            "Bairro: Pari\n",
+            "Email:ale.froes@live.com\n",
+            "Alexandre Froes 333.994.008-88 Rua Santa Clara. 97 Pari ale.froes@live.com\n"
+          ]
+        }
+      ],
+      "source": [
+        "print ('Sistema de Cadastro')\n",
+        "primnome = input ('Nome: ')\n",
+        "sobrenome = input ('Sobrenome: ')\n",
+        "cpf = input ('CPF: ')\n",
+        "\n",
+        "def formatcpf(cpf):\n",
+        "    vezes = 0\n",
+        "    novo = ''\n",
+        "    for quantidade in range (11):\n",
+        "        numero = cpf [quantidade]\n",
+        "        novo += numero\n",
+        "        vezes += 1\n",
+        "        if (quantidade == 8 ):\n",
+        "            novo += '-'\n",
+        "            vezes -= 3\n",
+        "        if (vezes == 3):\n",
+        "            novo += '.'\n",
+        "            vezes -= 3\n",
+        "    return novo\n",
+        "\n",
+        "\n",
+        "endereco = input ('Endereço: ')\n",
+        "bairro = input ('Bairro: ')\n",
+        "email = input ('Email:')\n",
+        "nome = primnome + ' '+ sobrenome\n",
+        "print (nome,  formatcpf(cpf), endereco, bairro, email)\n",
+        "\n"
+      ]
+    }
+  ]
+}
